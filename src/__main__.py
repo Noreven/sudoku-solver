@@ -1,10 +1,5 @@
-import requests
-
-
-def from_sudoku_api():
-    response = requests.get("https://sudoku-api.vercel.app/api/dosuku")
-    sudoku = response.json()["newboard"]["grids"][0]["value"]
-    return sudoku
+import sys
+from loader import from_sudoku_api, from_txt
 
 
 def show_grid(grid):
@@ -57,9 +52,15 @@ def solve_sudoku(grid, row, col):
 
 
 def main():
-    grid = from_sudoku_api()
+    args = sys.argv[1:]
+    if not args:
+        grid = from_sudoku_api()
+    else:
+        grid = from_txt(args[0])
+    print("ORIGINAL:")
     show_grid(grid)
     if solve_sudoku(grid, 0, 0):
+        print("SOLUTION:")
         show_grid(grid)
     else:
         print("Solution does not exist:(")
