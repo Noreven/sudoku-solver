@@ -49,13 +49,9 @@ To solve a Sudoku puzzle from a file, follow these steps:
 
 3. Run the script, and it will solve the Sudoku puzzle.
 
-### 2. Downloading a Sudoku from an API
+### 2. Downloading from dosuku API
 
-To solve a Sudoku puzzle downloaded from an API, follow these steps:
-
-1. Update the `api_url` variable in the script with the URL of the API that provides Sudoku puzzles.
-
-2. Run the script, and it will fetch a Sudoku puzzle from the specified API and solve it.
+if no path is provided, than a sukodu will automatically be downloaded from the dosuku API.
 
 ## Algorithm
 
